@@ -1,9 +1,10 @@
 .button-pannel{
-    height: 70%;
+    height: 60%;
 }
 .btn-group{
     height: 20%;
 }
 .btn{
     height: 100%;
+    font-size: 2em;
 }

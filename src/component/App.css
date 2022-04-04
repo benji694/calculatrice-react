@@ -1,7 +1,10 @@
+#root{
+  height: 100%;
+}
 .App {
   max-width: 600px;
+  height: 100%;
   margin: 0 auto;
-  height: 600px;
   text-align: center;
   background-color: black;
 }

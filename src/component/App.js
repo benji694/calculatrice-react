@@ -15,12 +15,12 @@ function App() {
       if (Number.isInteger(txt)) {
         if (nb1 === 0) {
           setNb1(txt);
-        }else {
+        } else {
           setNb1(parseInt(nb1 + txt.toString()));
         }
+        setResultat(nb1);
+        console.log(nb1);
       }
-      setResultat(nb1);
-      console.log(nb1);
     }
   };
 

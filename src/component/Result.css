@@ -1,7 +1,10 @@
 .result{
     height: 40%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
 }
 h1{
     color: white;
-    
+    font-size: 5em;
 }

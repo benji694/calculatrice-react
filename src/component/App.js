@@ -4,10 +4,18 @@ import ButtonPannel from './ButtonPannel.js'
 import Result from './Result.js'
 
 function App() {
+  
+  let nb1 = 0;
+  let calcul = '';
+  let nb2;
+
+  const clickButton = (txt) => {
+    console.log(txt)
+  }
   return (
     <div className="App">
       <Result/>
-      <ButtonPannel/>
+      <ButtonPannel clickButton={clickButton}/>
     </div>
   );
 }

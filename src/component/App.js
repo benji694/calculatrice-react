@@ -16,10 +16,16 @@ function App() {
         if (nb1 === 0) {
           setNb1(txt);
         } else {
-          setNb1(parseInt(nb1 + txt.toString()));
+          setNb1(parseFloat(nb1 + txt.toString()));
         }
         setResultat(nb1);
         console.log(nb1);
+      } else if (txt === ".") {
+        if (nb1.toString().includes(txt)) {
+          return false;
+        } else{
+          setNb1(nb1.toString() + txt);
+        }
       }
     }
   };

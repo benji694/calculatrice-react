@@ -24,6 +24,8 @@ function App() {
         } else{
           setNb1(nb1.toString() + txt);
         }
+      }else if(txt === 'AC'){
+        setNb1(0);
       }
       setResultat(nb1);
     }

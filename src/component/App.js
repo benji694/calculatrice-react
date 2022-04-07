@@ -5,29 +5,32 @@ import Result from "./Result.js";
 import { useState } from "react";
 
 function App() {
-  let [nb1, setNb1] = useState(0);
-  let calcul = "";
-  let nb2;
-  let [resultat, setResultat] = useState(0);
+  const [calcul, setCalcul] = useState([]);
+  const [resultat, setResultat] = useState(0);
 
   const clickButton = (txt) => {
-    if (calcul === "") {
-      if (!isNaN(txt)){
-        if (nb1 === 0) {
-          setNb1(txt);
-        } else {
-          setNb1(parseFloat(nb1 + txt.toString()));
-        }
-      } else if (txt === ".") {
-        if (nb1.toString().includes(txt)) {
-          return false;
-        } else{
-          setNb1(nb1.toString() + txt);
-        }
-      }else if(txt === 'AC'){
-        setNb1(0);
+    if (!isNaN(txt)) {
+      if (resultat === 0) {
+        setResultat(txt);
+      } else {
+        setResultat(resultat + txt.toString());
       }
-      setResultat(nb1);
+    } else if (txt === ".") {
+      setResultat(resultat + txt.toString());
+    } else if (txt === "AC") {
+      setResultat(0);
+      setCalcul([]);
+    } else if (txt === "+/-") {
+      setResultat(resultat * -1);
+    } else if (txt === "%") {
+      setResultat(resultat / 100);
+    } else if (txt === "÷" || txt === "+" || txt === "-" || txt === "x") {
+      setCalcul(calcul.push(resultat));
+      setResultat(0);
+      setCalcul(calcul.push(txt));
+      console.log(calcul);
+    } else if (txt === "=") {
+      console.log(calcul);
     }
   };
 
